@@ -11,6 +11,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'pubnub'
 gem 'figaro'
 gem 'gon'
+gem 'hue'
 
 gem 'jquery-rails'
 gem 'turbolinks'

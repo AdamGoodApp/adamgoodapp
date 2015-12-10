@@ -1,0 +1,36 @@
+var pubnub = PUBNUB({
+    subscribe_key: gon.pubnub['sub'],
+    publish_key: gon.pubnub['pub']
+});
+
+pubnub.subscribe({
+    channel: 'SubTest',
+    message: function(m){
+        console.log(m['number']);
+        storyController(m['number']);
+    },
+    error: function (error) {
+        console.log(JSON.stringify(error));
+    }
+});
+
+function storyController(number) {
+    switch(number) {
+        case 1:
+            soundPlayer("http://www.soundjay.com/nature/rain-07.mp3");
+            break;
+        case 3:
+            soundPlayer("http://www.sounddogs.com/previews/2718/mp3/463871_SOUNDDOGS__ne.mp3");
+            break;
+        default:
+    }
+}
+
+
+function soundPlayer(soundFile) {
+    sound = new Howl({
+        urls: [soundFile],
+        loop: true,
+        volume: 0.5
+    }).play();
+}
