@@ -12,6 +12,7 @@ gem 'pubnub'
 gem 'figaro'
 gem 'gon'
 gem 'hue'
+gem 'pocketsphinx-ruby'
 
 gem 'jquery-rails'
 gem 'turbolinks'
